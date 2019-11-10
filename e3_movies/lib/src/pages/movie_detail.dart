@@ -148,6 +148,7 @@ class MovieDetail extends StatelessWidget {
               placeholder: AssetImage('assets/img/no-image.jpg'),
               fit: BoxFit.cover,
               height: 150,
+              width: 100,
             ),
           ),
           Text(actor.name, overflow: TextOverflow.ellipsis),
