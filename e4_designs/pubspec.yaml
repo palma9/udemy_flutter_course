@@ -44,6 +44,7 @@ flutter:
   assets:
     - assets/img/loading.gif
     - assets/img/no-image.jpg
+    - assets/img/scroll-1.png
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
