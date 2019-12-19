@@ -1,0 +1,19 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.metadata": true,
+        "**/*.packages": true,
+        "**/*.idea": true,
+        "test": true,
+        "android": true,
+        "build": true,
+        "ios": true,
+        "pubspec.lock": true,
+        "*.iml": true,
+        ".flutter-plugins": true
+    }
+}
