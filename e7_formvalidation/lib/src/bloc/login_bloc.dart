@@ -1,0 +1,33 @@
+
+
+
+import 'dart:async';
+
+import 'package:e7_formvalidation/src/bloc/validators.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:rxdart/streams.dart';
+
+class LoginBloc with Validators {
+  final _emailController    = BehaviorSubject<String>();
+  final _passwordController = BehaviorSubject<String>();
+
+  // Recuperar datos del string
+  Stream<String> get emailStream    => _emailController.stream.transform(validateEmail);
+  Stream<String> get passwordStream => _passwordController.stream.transform(validatePassword);
+
+  Stream<bool> get formValidStream => CombineLatestStream.combine2(emailStream, passwordStream, (e, p) => true);
+
+  // Insertar valores al string
+  Function(String) get changeEmail    => _emailController.sink.add;
+  Function(String) get changePassword => _passwordController.sink.add;
+
+  // GET last values
+  String get email    => _emailController.value;
+  String get password => _passwordController.value;
+
+  dispose() {
+    _emailController?.close();
+    _passwordController?.close();
+  }
+
+}
